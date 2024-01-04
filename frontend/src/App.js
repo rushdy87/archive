@@ -1,13 +1,18 @@
 import Nav from "./components/Nav/Nav";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import {data} from './data/income'
+import Incoming from "./components/Incoming/Incoming";
+import Outcoming from "./components/Outcoming/Outcoming";
 
 function App() {
-  console.log(data);
-  return <>
+  return <BrowserRouter>
   <Nav />
-    <h1>الصادر والوارد</h1>
-  </>
+    <Routes>
+    <Route path="/" element={<h1>Hi there</h1>} />
+    <Route path="/incoming" element={<Incoming />} />
+    <Route path="/outcoming" element={<Outcoming />} />
+    </Routes>
+  </BrowserRouter>
 }
 
 export default App;

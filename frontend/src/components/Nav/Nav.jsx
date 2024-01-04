@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 import './Nav.css';
 
 const Nav = () => {
@@ -5,10 +7,10 @@ const Nav = () => {
     <div className='nav-container'>
         <ul className="nav-list">
             <li className="nav-item">
-                <span className="nav-item_link">الصادر</span>
+                <Link to="/incoming" className="nav-item_link">الوارد</Link >
             </li>
             <li className="nav-item">
-            <span className="nav-item_link">الوارد</span>
+            <Link to="/outcoming" className="nav-item_link">الصادر</Link >
             </li>
         </ul>
         <div className='nav-title'>
