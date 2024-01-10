@@ -1,11 +1,12 @@
 import {data} from '../../data/income'
+import Search from '../Search/Search';
 import './Incoming.css'
 
 const Incoming = () => {
   return (
     <div className='incoming-container'>
       سجل الوارد
-      <div>Search component</div>
+      <Search />
       <div>Add</div>
       <table className="styled-table">
     <thead>
