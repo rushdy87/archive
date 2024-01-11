@@ -15,7 +15,7 @@ const Search = () => {
         record[Object.keys(searchField)[0]].toString() ===
         searchField[Object.keys(searchField)].toString()
     );
-
+    setSearchField(null);
     console.log(findedData);
   };
 
@@ -57,7 +57,11 @@ const Search = () => {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit" className="search-btn">
+            <button
+              type="submit"
+              className="search-btn"
+              disabled={!searchField}
+            >
               أبحث
             </button>
           </div>
