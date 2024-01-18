@@ -39,7 +39,7 @@ const Navbar = () => {
         <nav className={`navbar ${menuOpen ? 'isMenu' : ''}`}>
           <ul>
             <li>
-              <Link to='/'>الصادر</Link>
+              <Link to='/in'>الصادر</Link>
             </li>
             <li>
               <Link to='/'>الوارد</Link>
@@ -52,8 +52,8 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <div className='content-toggle'>
-          {menuOpen ? (
+        <div className='navbar_content-toggle'>
+          {!menuOpen ? (
             <BiMenuAltLeft onClick={menuToggleHandler} />
           ) : (
             <AiOutlineClose onClick={menuToggleHandler} />
