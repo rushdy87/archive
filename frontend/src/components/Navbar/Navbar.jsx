@@ -39,16 +39,16 @@ const Navbar = () => {
         <nav className={`navbar ${menuOpen ? 'isMenu' : ''}`}>
           <ul>
             <li>
-              <Link to='/in'>الصادر</Link>
+              <Link to='/outgoing'>الصادر</Link>
             </li>
             <li>
-              <Link to='/'>الوارد</Link>
+              <Link to='/ingoing'>الوارد</Link>
             </li>
             <li>
-              <Link to='/'>بحث</Link>
+              <Link to='/search'>بحث</Link>
             </li>
             <li>
-              <Link to='/'>اضافة</Link>
+              <Link to='/adding'>اضافة</Link>
             </li>
           </ul>
         </nav>
