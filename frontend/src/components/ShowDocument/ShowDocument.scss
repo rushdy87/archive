@@ -11,7 +11,11 @@
     border-radius: $borderRadius;
     padding: 10px 20px;
     margin: 5px auto;
-    font-size: 1.5em;
+    font-size: 1em;
+
+    @include breakpoint(md) {
+      font-size: 1.5em;
+    }
   }
 
   .show-doc-row_1,
@@ -19,9 +23,14 @@
   .show-doc-row_3 {
     width: 90%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     font-size: 1.2em;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
 
     .show-doc-cell {
       display: flex;

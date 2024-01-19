@@ -7,6 +7,9 @@ const ShowDocument = ({ document }) => {
         <h1>{document.subject}</h1>
       </div>
       <div className='show-doc-row_1'>
+        <span className='show-doc-type'>
+          {document.type === 'ingoing' ? 'وارد' : 'صادر'}
+        </span>
         <div className='show-doc-cell'>
           <span>العدد:</span>
           <span>{document.id}</span>
@@ -15,9 +18,6 @@ const ShowDocument = ({ document }) => {
           <span>التاريخ:</span>
           <span>{document.date}</span>
         </div>
-        <span className='show-doc-type'>
-          {document.type === 'ingoing' ? 'وارد' : 'صادر'}
-        </span>
       </div>
       <div className='show-doc-row_2'>
         <div className='show-doc-cell'>
