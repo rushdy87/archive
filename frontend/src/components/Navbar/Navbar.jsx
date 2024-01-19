@@ -36,7 +36,10 @@ const Navbar = () => {
         <Link to='/' className='logo'>
           الاستلام والتجهيز
         </Link>
-        <nav className={`navbar ${menuOpen ? 'isMenu' : ''}`}>
+        <nav
+          className={`navbar ${menuOpen ? 'isMenu' : ''}`}
+          onClick={(e) => (menuOpen ? setMenuOpen(false) : null)}
+        >
           <ul>
             <li>
               <Link to='/outgoing'>الصادر</Link>
