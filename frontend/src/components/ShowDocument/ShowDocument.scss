@@ -1,0 +1,40 @@
+@import '../../variables.scss';
+.show-doc-container {
+  width: 70vw;
+  margin: 1px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .show-doc-header {
+    background-color: rgba($color: $info, $alpha: 0.05);
+    border-radius: $borderRadius;
+    padding: 10px 20px;
+    margin: 5px auto;
+    font-size: 1.5em;
+  }
+
+  .show-doc-row_1,
+  .show-doc-row_2,
+  .show-doc-row_3 {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2em;
+
+    .show-doc-cell {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+  .show-doc-type {
+    font-size: 1.3em;
+    font-weight: 900;
+    color: $danger;
+  }
+  .show-doc-tags {
+    color: $primary;
+  }
+}
