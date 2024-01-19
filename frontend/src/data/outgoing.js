@@ -10,7 +10,7 @@ export const data = [
       'فايا محمد حسام',
       'راما محمد حسام فيضي',
     ],
-    type: 'صادر',
+    type: 'outgoing',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const data = [
     subject: 'ترشيح',
     tags: ['اداري'],
     employess: ['محمد حسام فيضي الرشدي'],
-    type: 'صادر',
+    type: 'outgoing',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ export const data = [
     subject: 'الحسابات الختامية',
     tags: ['فني'],
     employess: ['فايا محمد حسام', 'راما محمد حسام فيضي'],
-    type: 'صادر',
+    type: 'outgoing',
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const data = [
     subject: 'زيت الوقود الثقيل',
     tags: ['فني'],
     employess: [],
-    type: 'صادر',
+    type: 'outgoing',
   },
   {
     id: 5,

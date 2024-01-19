@@ -15,7 +15,9 @@ const ShowDocument = ({ document }) => {
           <span>التاريخ:</span>
           <span>{document.date}</span>
         </div>
-        <span className='show-doc-type'>{document.type}</span>
+        <span className='show-doc-type'>
+          {document.type === 'ingoing' ? 'وارد' : 'صادر'}
+        </span>
       </div>
       <div className='show-doc-row_2'>
         <div className='show-doc-cell'>
@@ -27,16 +29,18 @@ const ShowDocument = ({ document }) => {
           <span>{document.correspondent}</span>
         </div>
       </div>
-      <div className='show-doc-row_3'>
-        <div className='show-doc-cell'>
-          <span>تاريخ الكتاب:</span>
-          <span>{document.document_date}</span>
+      {document.type === 'ingoing' && (
+        <div className='show-doc-row_3'>
+          <div className='show-doc-cell'>
+            <span>تاريخ الكتاب:</span>
+            <span>{document.document_date}</span>
+          </div>
+          <div className='show-doc-cell'>
+            <span>رقم الكتاب:</span>
+            <span>{document.document_id}</span>
+          </div>
         </div>
-        <div className='show-doc-cell'>
-          <span>رقم الكتاب:</span>
-          <span>{document.document_id}</span>
-        </div>
-      </div>
+      )}
       <div className='show-doc-employess'>
         {document.employess.length > 0 && (
           <>

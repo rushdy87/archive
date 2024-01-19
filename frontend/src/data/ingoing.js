@@ -12,7 +12,7 @@ export const data = [
       'فايا محمد حسام',
       'راما محمد حسام فيضي',
     ],
-    type: 'وارد',
+    type: 'ingoing',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const data = [
       'فايا محمد حسام',
       'راما محمد حسام فيضي',
     ],
-    type: 'وارد',
+    type: 'ingoing',
   },
   {
     id: 3,
@@ -38,6 +38,6 @@ export const data = [
     subject: 'الحسابات الختامية',
     tags: ['اداري'],
     employess: [],
-    type: 'وارد',
+    type: 'ingoing',
   },
 ];
