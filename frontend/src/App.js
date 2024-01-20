@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<h1>Hi there!!!</h1>} />
+        <Route path='/' element={<h1>Hi, there</h1>} />
         <Route path='/ingoing' element={<Ingoing />} />
         <Route path='/outgoing' element={<Outgoing />} />
         <Route path='/search' element={<Search />} />

@@ -1,0 +1,63 @@
+@import '../../variables.scss';
+
+.search-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .search-nav {
+    display: flex;
+
+    .search-header {
+      width: 100%;
+      background-color: rgb(153, 184, 184);
+      height: fit-content;
+
+      @include breakpoint(md) {
+        height: 200px;
+        width: 75%;
+      }
+
+      .input-fields {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px;
+
+        @include breakpoint(md) {
+          flex-direction: row;
+        }
+
+        .date-inputs {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          width: 100%;
+
+          @include breakpoint(md) {
+            width: 60%;
+          }
+        }
+        .search-btns {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40%;
+        }
+      }
+    }
+    .search-sidebar {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+        width: 25%;
+        background-color: aquamarine;
+        height: 100vh;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.input-date-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin: 5px;
+  position: relative;
+
+  .date-input {
+    width: 150px;
+    height: 30px;
+    background: rgba($color: $secondary, $alpha: 0.1);
+    border: none;
+    border-radius: $borderRadius;
+    outline: none;
+    font-size: 1.2rem;
+    text-align: center;
+
+    &:focus {
+      border-bottom: solid 2px $primary;
+      outline: none;
+    }
+
+    &::-webkit-contacts-auto-fill-button {
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
