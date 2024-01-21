@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .search-container {
   width: 100%;
@@ -7,6 +7,7 @@
 
   .search-nav {
     display: flex;
+    width: 100%;
 
     .search-header {
       width: 100%;
@@ -15,7 +16,6 @@
 
       @include breakpoint(md) {
         height: 200px;
-        width: 75%;
       }
 
       .input-fields {
@@ -54,7 +54,7 @@
 
       @include breakpoint(md) {
         display: block;
-        width: 25%;
+        width: 250px;
         background-color: aquamarine;
         height: 100vh;
       }

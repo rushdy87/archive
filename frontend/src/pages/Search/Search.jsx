@@ -1,58 +1,58 @@
-import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
-import InputDate from '../../components/InputDate/InputDate';
-import './Search.scss';
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import InputDate from "../../components/InputDate/InputDate";
+import "./Search.scss";
 
 const Search = () => {
   return (
-    <div className='search-container'>
-      <div className='search-nav'>
-        <div className='search-header'>
+    <div className="search-container">
+      <div className="search-nav">
+        <div className="search-header">
           <form>
-            <div className='input-fields'>
+            <div className="input-fields">
               <Input
-                type='text'
-                label='الموضوع'
-                id='subject'
+                type="text"
+                label="الموضوع"
+                id="subject"
                 handleChange={(e) => console.log(e.target.value)}
-                value=''
+                value=""
               />
               <Input
-                type='text'
-                label='الجهة'
-                id='correspondent'
+                type="text"
+                label="الجهة"
+                id="correspondent"
                 handleChange={(e) => console.log(e.target.value)}
-                value=''
+                value=""
               />
               <Input
-                type='text'
-                label='صاحب العلاقة'
-                id='employee'
+                type="text"
+                label="صاحب العلاقة"
+                id="employee"
                 handleChange={(e) => console.log(e.target.value)}
-                value=''
+                value=""
               />
             </div>
-            <div className='input-fields'>
-              <div className='date-inputs'>
+            <div className="input-fields">
+              <div className="date-inputs">
                 <span>للفترة</span>
                 <InputDate
-                  id='from'
-                  label='من'
+                  id="from"
+                  label="من"
                   handleChange={() => null}
-                  value=''
+                  value=""
                 />
                 <InputDate
-                  id='to'
-                  label='إلى'
+                  id="to"
+                  label="إلى"
                   handleChange={() => null}
-                  value=''
+                  value=""
                 />
               </div>
 
-              <div className='search-btns'>
+              <div className="search-btns">
                 <Button
-                  className='button primary'
-                  type='submit'
+                  className="button primary"
+                  type="submit"
                   onClick={() => {}}
                 >
                   بحث
@@ -61,9 +61,9 @@ const Search = () => {
             </div>
           </form>
         </div>
-        <div className='search-sidebar'>search-sidebar</div>
+        <div className="search-sidebar">search-sidebar</div>
       </div>
-      <div className='search-result'>search-result</div>
+      <div className="search-result">search-result</div>
     </div>
   );
 };
