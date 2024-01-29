@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: 1,
+    id: 100,
     date: '2024-01-01',
     correspondent: 'شعبة المعلومات',
     document_date: '2024-01-01',
@@ -15,7 +15,7 @@ export const data = [
     type: 'ingoing',
   },
   {
-    id: 2,
+    id: 200,
     date: '2024-01-02',
     correspondent: 'شعبة التدريب',
     document_date: '2024-01-01',
@@ -30,7 +30,7 @@ export const data = [
     type: 'ingoing',
   },
   {
-    id: 3,
+    id: 300,
     date: '2024-01-02',
     correspondent: 'مكتب معاون المدير العام',
     document_date: '2024-01-02',

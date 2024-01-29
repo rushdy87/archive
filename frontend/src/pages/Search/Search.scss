@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .search-container {
   width: 100%;
@@ -10,8 +10,10 @@
 
     .search-header {
       width: 100%;
-      background-color: rgb(153, 184, 184);
       height: 350px;
+      background-color: rgba($secondary, 0.2);
+      border: 2px solid $primary;
+      border-left: none;
 
       @include breakpoint(md) {
         height: 200px;
@@ -50,28 +52,46 @@
     }
     .search-sidebar {
       display: none;
+      background-color: rgba($secondary, 0.2);
+      border-top: 2px solid $primary;
+      width: 250px;
+      height: 100%;
 
-      .in_out {
-        input {
-          margin: 10px;
+      .search-sidebar_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 196px;
+        border: 2px solid $primary;
+        border-top: none;
+        height: 100vh;
+
+        .search-filter_head_label {
+          font-size: 1.4rem;
+          font-weight: bold;
         }
-        label {
-          margin: 10px;
+
+        .search-sidebar_in_out {
+          margin: 20px 10px;
+          input {
+            margin: 10px;
+          }
+          label {
+            margin: 10px;
+          }
+        }
+
+        .search-sidebar_tags {
+          margin: 20px 10px;
+          div input,
+          div label {
+            margin: 10px;
+          }
         }
       }
-
-      .search-sidebar_tags {
-        div input,
-        div label {
-          margin: 10px;
-        }
-      }
-
       @include breakpoint(md) {
         display: block;
-        width: 250px;
-        background-color: aquamarine;
-        height: 100vh;
       }
     }
   }
@@ -80,7 +100,6 @@
     position: absolute;
     top: 350px;
     right: 0;
-    background-color: blueviolet;
     width: 100%;
     margin: 20px auto;
     display: flex;

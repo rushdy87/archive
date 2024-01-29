@@ -1,6 +1,6 @@
 import './Input.scss';
 
-const Input = ({ type, label, id, handleChange, value }) => {
+const Input = ({ type, label, id, name, handleChange, value }) => {
   return (
     <div className='input-wrapper'>
       <input
@@ -8,6 +8,7 @@ const Input = ({ type, label, id, handleChange, value }) => {
         className='input'
         type={type}
         id={id}
+        name={name}
         placeholder={label}
         onChange={handleChange}
         value={value}
