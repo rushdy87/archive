@@ -1,32 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
-import InputDate from '../../components/InputDate/InputDate';
-import { data } from '../../data/tags';
-import { data as ingoingData } from '../../data/ingoing';
-import { data as outgoingData } from '../../data/outgoing';
-import './Search.scss';
-import DocumentsTable from '../../components/DocumentsTable/DocumentsTable';
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import InputDate from "../../components/InputDate/InputDate";
+import { data } from "../../data/tags";
+import { data as ingoingData } from "../../data/ingoing";
+import { data as outgoingData } from "../../data/outgoing";
+import "./Search.scss";
+import DocumentsTable from "../../components/DocumentsTable/DocumentsTable";
 
 const allDocs = [...ingoingData, ...outgoingData];
 
 const Search = () => {
   const [terms, setTerms] = useState({
-    subject: '',
-    correspondent: '',
-    employee: '',
-    from: '',
-    to: '',
+    subject: "",
+    correspondent: "",
+    employee: "",
+    from: "",
+    to: "",
   });
   const [documents, setDocuments] = useState(allDocs);
   const [filterFields, setFilterFields] = useState({
-    type: '',
+    type: "",
+    folder: "",
     tags: [],
   });
 
   const handleFilterFiledsChange = (event) => {
-    if (event.target.name === 'tags') {
+    if (event.target.name === "tags") {
       setFilterFields((prev) => ({
         ...prev,
         tags: prev.tags.includes(event.target.value)
@@ -61,7 +62,7 @@ const Search = () => {
   // The search functionallty need to re-write!
   useEffect(() => {
     let docs;
-    if (filterFields.type === 'outgoing' || filterFields.type === 'ingoing') {
+    if (filterFields.type === "outgoing" || filterFields.type === "ingoing") {
       docs = allDocs.filter((doc) => doc.type === filterFields.type);
     } else {
       docs = [...allDocs];
@@ -79,59 +80,59 @@ const Search = () => {
   }, [filterFields]);
 
   return (
-    <div className='search-container'>
-      <div className='search-nav'>
-        <div className='search-header'>
+    <div className="search-container">
+      <div className="search-nav">
+        <div className="search-header">
           <form onSubmit={handleSearchSubmit}>
-            <div className='input-fields'>
+            <div className="input-fields">
               <Input
-                type='text'
-                label='الموضوع'
-                id='subject'
-                name='subject'
+                type="text"
+                label="الموضوع"
+                id="subject"
+                name="subject"
                 handleChange={handleSearchTermChange}
                 value={terms.subject}
               />
               <Input
-                type='text'
-                label='الجهة'
-                id='correspondent'
-                name='correspondent'
+                type="text"
+                label="الجهة"
+                id="correspondent"
+                name="correspondent"
                 handleChange={handleSearchTermChange}
                 value={terms.correspondent}
               />
               <Input
-                type='text'
-                label='صاحب العلاقة'
-                id='employee'
-                name='employee'
+                type="text"
+                label="صاحب العلاقة"
+                id="employee"
+                name="employee"
                 handleChange={handleSearchTermChange}
                 value={terms.employee}
               />
             </div>
-            <div className='input-fields'>
-              <div className='date-inputs'>
+            <div className="input-fields">
+              <div className="date-inputs">
                 <span>للفترة</span>
                 <InputDate
-                  id='from'
-                  name='from'
-                  label='من'
+                  id="from"
+                  name="from"
+                  label="من"
                   handleChange={handleSearchTermChange}
                   value={terms.from}
                 />
                 <InputDate
-                  id='to'
-                  name='to'
-                  label='إلى'
+                  id="to"
+                  name="to"
+                  label="إلى"
                   handleChange={handleSearchTermChange}
                   value={terms.to}
                 />
               </div>
 
-              <div className='search-btns'>
+              <div className="search-btns">
                 <Button
-                  className='button primary'
-                  type='submit'
+                  className="button primary"
+                  type="submit"
                   onClick={() => {}}
                 >
                   بحث
@@ -140,54 +141,92 @@ const Search = () => {
             </div>
           </form>
         </div>
-        <div className='search-sidebar'>
-          <div className='search-sidebar_wrapper'>
-            <div className='search-sidebar_in_out'>
-              <span className='search-filter_head_label'>الصادر والوارد</span>
-              <div className='outgoing_radio'>
+        <div className="search-sidebar">
+          <div className="search-sidebar_wrapper">
+            <div className="search-sidebar_in_out">
+              <span className="search-filter_head_label">الصادر والوارد</span>
+              <div className="outgoing_radio">
                 <input
-                  type='radio'
-                  id='outgoing'
-                  name='type'
-                  value='outgoing'
+                  type="radio"
+                  id="outgoing"
+                  name="type"
+                  value="outgoing"
                   onChange={handleFilterFiledsChange}
-                  checked={filterFields.type === 'outgoing'}
+                  checked={filterFields.type === "outgoing"}
                 />
-                <label htmlFor='outgoing'>صادر</label>
+                <label htmlFor="outgoing">صادر</label>
               </div>
 
               <div>
                 <input
-                  type='radio'
-                  id='ingoing'
-                  name='type'
-                  value='ingoing'
+                  type="radio"
+                  id="ingoing"
+                  name="type"
+                  value="ingoing"
                   onChange={handleFilterFiledsChange}
-                  checked={filterFields.type === 'ingoing'}
+                  checked={filterFields.type === "ingoing"}
                 />
-                <label htmlFor='ingoing'>وارد</label>
+                <label htmlFor="ingoing">وارد</label>
               </div>
               <div>
                 <input
-                  type='radio'
-                  id='all'
-                  name='type'
-                  value='all'
+                  type="radio"
+                  id="all"
+                  name="type"
+                  value="all"
                   onChange={handleFilterFiledsChange}
-                  checked={filterFields.type === 'all'}
+                  checked={filterFields.type === "all"}
                 />
-                <label htmlFor='all'>الجميع</label>
+                <label htmlFor="all">الجميع</label>
               </div>
             </div>
-            <div className='search-sidebar_tags'>
-              <span className='search-filter_head_label'>Tags</span>
+
+            <div className="search-sidebar_folder">
+              <span className="search-filter_head_label">المجلد</span>
+              <div>
+                <input
+                  type="radio"
+                  id="admin"
+                  name="folder"
+                  value="admin"
+                  onChange={handleFilterFiledsChange}
+                  checked={filterFields.folder === "admin"}
+                />
+                <label htmlFor="admin">الاداري</label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  id="u45"
+                  name="folder"
+                  value="u45"
+                  onChange={handleFilterFiledsChange}
+                  checked={filterFields.folder === "u45"}
+                />
+                <label htmlFor="ingoing">U45</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="u52"
+                  name="folder"
+                  value="u52"
+                  onChange={handleFilterFiledsChange}
+                  checked={filterFields.folder === "u52"}
+                />
+                <label htmlFor="all">U52</label>
+              </div>
+            </div>
+            <div className="search-sidebar_tags">
+              <span className="search-filter_head_label">Tags</span>
               {data.map((tag) => {
                 return (
                   <div key={tag.id}>
                     <input
-                      type='checkbox'
+                      type="checkbox"
                       id={`tag${tag.id}`}
-                      name='tags'
+                      name="tags"
                       value={tag.tag}
                       onChange={handleFilterFiledsChange}
                     />
@@ -199,7 +238,7 @@ const Search = () => {
           </div>
         </div>
       </div>
-      <div className='search-result'>
+      <div className="search-result">
         <DocumentsTable documents={documents} />
       </div>
     </div>
